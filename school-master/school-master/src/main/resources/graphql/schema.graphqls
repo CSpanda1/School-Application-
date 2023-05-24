@@ -1,0 +1,47 @@
+type Query {
+
+    studentsById(id: ID): Student
+    studentsBySchool(id: ID):[Student]
+    studentsByTeacher(id: ID):[Student]
+   # studentBySchool: Student
+
+
+
+}
+
+
+type School{
+
+    schoolID: ID
+    schoolName: String
+    schoolRegisteredNumber: Int
+
+
+}
+type Student{
+
+    studentID: ID
+    studentName: String
+    studentClass:String
+    teacherID: Int
+    schoolAssociated: Int
+
+}
+type Teacher{
+
+    teacherID:ID
+    teacherName:String
+    educationQualification:String
+    schoolAssociated: Int
+}
+
+
+
+type Mutation
+{
+    schoolByID(schoolID: Int, schoolName: String, schoolRegisteredNumber: Int): School
+
+}
+
+
+
